@@ -342,15 +342,108 @@ const NavigationSidebar: React.FC = () => {
 };
 
 const MobileHeader: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    
+    // Close menu when route changes
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location]);
+
+    // Prevent scrolling when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [isMenuOpen]);
+
+    const isActive = (path: string) => location.pathname === path;
+
     return (
-        <header className="md:hidden sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-background-dark/80 backdrop-blur-md border-b border-surface-highlight">
-            <div className="flex items-center gap-3">
-                 <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600 shadow-lg shadow-primary/20">
-                    <span className="material-symbols-outlined text-white text-lg">graphic_eq</span>
+        <>
+            <header className="md:hidden sticky top-0 z-40 flex items-center justify-between px-6 py-4 bg-background-dark/90 backdrop-blur-md border-b border-surface-highlight">
+                <div className="flex items-center gap-3">
+                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600 shadow-lg shadow-primary/20">
+                        <span className="material-symbols-outlined text-white text-lg">graphic_eq</span>
+                    </div>
+                    <span className="font-bold text-white text-sm">Domínio do Timbre</span>
                 </div>
-                <span className="font-bold text-white text-sm">Domínio do Timbre</span>
-            </div>
-        </header>
+                <button 
+                    onClick={() => setIsMenuOpen(true)}
+                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-highlight text-white active:scale-95 transition-transform"
+                >
+                    <span className="material-symbols-outlined">menu</span>
+                </button>
+            </header>
+
+            {/* Mobile Menu Overlay */}
+            {isMenuOpen && (
+                <div className="fixed inset-0 z-50 flex flex-col bg-background-dark animate-in slide-in-from-right duration-300">
+                    <div className="flex items-center justify-between px-6 py-4 border-b border-surface-highlight">
+                         <div className="flex items-center gap-3">
+                             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600">
+                                <span className="material-symbols-outlined text-white text-lg">graphic_eq</span>
+                            </div>
+                            <span className="font-bold text-white text-sm">Menu</span>
+                        </div>
+                        <button 
+                            onClick={() => setIsMenuOpen(false)}
+                            className="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-highlight text-white active:scale-95 transition-transform"
+                        >
+                            <span className="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    
+                    <nav className="flex-1 overflow-y-auto p-4 flex flex-col gap-2">
+                        <Link to="/" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                            <span className={`material-symbols-outlined ${isActive('/') ? 'text-primary' : ''}`}>dashboard</span>
+                            <span className={`font-medium ${isActive('/') ? 'text-white' : ''} text-lg`}>Dashboard</span>
+                        </Link>
+                        
+                        <div className="px-4 py-4 mt-2 text-xs font-bold text-text-muted uppercase tracking-wider">Ferramentas</div>
+                        
+                        <Link to="/frequency-lab" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/frequency-lab') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                            <span className={`material-symbols-outlined ${isActive('/frequency-lab') ? 'text-primary' : ''}`}>ssid_chart</span>
+                            <div className="flex flex-col">
+                                <span className={`font-medium ${isActive('/frequency-lab') ? 'text-white' : ''} text-lg`}>Mapa do Tesouro</span>
+                                <span className="text-xs text-text-muted font-normal">Explore as frequências</span>
+                            </div>
+                        </Link>
+
+                        <Link to="/ear-trainer" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/ear-trainer') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                            <span className={`material-symbols-outlined ${isActive('/ear-trainer') ? 'text-primary' : ''}`}>hearing</span>
+                            <div className="flex flex-col">
+                                <span className={`font-medium ${isActive('/ear-trainer') ? 'text-white' : ''} text-lg`}>Treino de Ouvido</span>
+                                <span className="text-xs text-text-muted font-normal">Teste sua percepção</span>
+                            </div>
+                        </Link>
+
+                        <Link to="/chapter-quiz" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/chapter-quiz') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                            <span className={`material-symbols-outlined ${isActive('/chapter-quiz') ? 'text-primary' : ''}`}>school</span>
+                            <div className="flex flex-col">
+                                <span className={`font-medium ${isActive('/chapter-quiz') ? 'text-white' : ''} text-lg`}>Quiz (50 Questões)</span>
+                                <span className="text-xs text-text-muted font-normal">Desafie seu conhecimento</span>
+                            </div>
+                        </Link>
+
+                        <Link to="/eq-recipes" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/eq-recipes') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                            <span className={`material-symbols-outlined ${isActive('/eq-recipes') ? 'text-primary' : ''}`}>tune</span>
+                            <div className="flex flex-col">
+                                <span className={`font-medium ${isActive('/eq-recipes') ? 'text-white' : ''} text-lg`}>Receitas Prontas</span>
+                                <span className="text-xs text-text-muted font-normal">Presets explicados</span>
+                            </div>
+                        </Link>
+                    </nav>
+
+                    <div className="p-6 border-t border-surface-highlight">
+                        <p className="text-center text-text-muted text-sm">Domínio do Timbre Lab v2.5</p>
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
 
