@@ -47,7 +47,7 @@ const EQ_RECIPES = [
         name: "Solo Limpo (Pop/Worship)",
         type: "Guitarra • Lead",
         desc: "Compensa a falta de compressão natural empurrando frequências frontais.",
-        curve: { hp: 100, lp: 12000, boosts: [{f: 1000, g: 5}, {f: 8000, g: 3}], cuts: [] },
+        curve: { hp: 100, lp: 12000, boosts: [{ f: 1000, g: 5 }, { f: 8000, g: 3 }], cuts: [] },
         steps: [
             { freq: "100-120 Hz", action: "High Pass", type: "cut", reason: "Limpa a sujeira grave, mantendo o corpo." },
             { freq: "1 kHz", action: "Boost Largo (+4dB)", type: "boost", reason: "Traz a guitarra para a frente da mix." },
@@ -59,7 +59,7 @@ const EQ_RECIPES = [
         name: "Solo High Gain (Shred)",
         type: "Guitarra • Distortion",
         desc: "Foco em subtração. Remove o que sobra para ganhar definição na velocidade.",
-        curve: { hp: 200, lp: 10000, boosts: [{f: 2500, g: 3}], cuts: [{f: 4000, g: -4}] },
+        curve: { hp: 200, lp: 10000, boosts: [{ f: 2500, g: 3 }], cuts: [{ f: 4000, g: -4 }] },
         steps: [
             { freq: "200 Hz", action: "High Pass Agressivo", type: "cut", reason: "Remove o 'ronco' que embola com o bumbo duplo." },
             { freq: "2.5 kHz", action: "Boost Sutil (+2dB)", type: "boost", reason: "Adiciona a 'mordida' para cortar a distorção." },
@@ -72,7 +72,7 @@ const EQ_RECIPES = [
         name: "Base Rock (Crunch/Classic)",
         type: "Guitarra • Base",
         desc: "Timbre clássico de Rock, focado nos médios para preencher o espaço.",
-        curve: { hp: 100, lp: 12000, boosts: [{f: 720, g: 4}], cuts: [{f: 300, g: -2}] },
+        curve: { hp: 100, lp: 12000, boosts: [{ f: 720, g: 4 }], cuts: [{ f: 300, g: -2 }] },
         steps: [
             { freq: "100 Hz", action: "High Pass", type: "cut", reason: "Mantém o peso fundamental." },
             { freq: "300 Hz", action: "Corte Leve", type: "cut", reason: "Limpa um pouco da 'lama' da Gibson/Humbucker." },
@@ -84,7 +84,7 @@ const EQ_RECIPES = [
         name: "Base Metal (Modern)",
         type: "Guitarra • Base",
         desc: "Timbre moderno 'Scooped' (cavado), mas com controle para não sumir.",
-        curve: { hp: 80, lp: 11000, boosts: [{f: 6000, g: 3}, {f: 100, g: 2}], cuts: [{f: 800, g: -4}] },
+        curve: { hp: 80, lp: 11000, boosts: [{ f: 6000, g: 3 }, { f: 100, g: 2 }], cuts: [{ f: 800, g: -4 }] },
         steps: [
             { freq: "80 Hz", action: "High Pass", type: "cut", reason: "Corte mais baixo para permitir o 'chug' da 7ª corda." },
             { freq: "800 Hz", action: "Corte Largo", type: "cut", reason: "Remove o som de 'rádio' para deixar o som mais agressivo." },
@@ -96,7 +96,7 @@ const EQ_RECIPES = [
         name: "Ambient Clean (Post-Rock)",
         type: "Guitarra • Textura",
         desc: "Timbre etéreo para muito Reverb/Delay. Foco em não embolar.",
-        curve: { hp: 200, lp: 6000, boosts: [{f: 400, g: 3}], cuts: [{f: 2000, g: -2}] },
+        curve: { hp: 200, lp: 6000, boosts: [{ f: 400, g: 3 }], cuts: [{ f: 2000, g: -2 }] },
         steps: [
             { freq: "200 Hz", action: "High Pass Alto", type: "cut", reason: "O Reverb vai adicionar grave artificial, então corte a fonte." },
             { freq: "400 Hz", action: "Boost Quente", type: "boost", reason: "Dá calor e corpo para notas longas." },
@@ -108,7 +108,7 @@ const EQ_RECIPES = [
         name: "Violão de Aço (Strumming)",
         type: "Acústico • Base",
         desc: "Remove o som de 'caixa' e acentua o brilho das cordas novas.",
-        curve: { hp: 80, lp: 15000, boosts: [{f: 10000, g: 4}], cuts: [{f: 350, g: -5}] },
+        curve: { hp: 80, lp: 15000, boosts: [{ f: 10000, g: 4 }], cuts: [{ f: 350, g: -5 }] },
         steps: [
             { freq: "80 Hz", action: "High Pass", type: "cut", reason: "Evita o 'boom' excessivo ao bater na corda solta." },
             { freq: "350 Hz", action: "Corte Profundo", type: "cut", reason: "Remove o som de 'caixa de papelão' típico de captação piezo." },
@@ -120,7 +120,7 @@ const EQ_RECIPES = [
         name: "Djent / 8-Cordas",
         type: "Guitarra • Extreme",
         desc: "Controle total de graves para afinações muito baixas (Drop E/F#).",
-        curve: { hp: 60, lp: 11000, boosts: [{f: 1400, g: 4}], cuts: [{f: 500, g: -3}] },
+        curve: { hp: 60, lp: 11000, boosts: [{ f: 1400, g: 4 }], cuts: [{ f: 500, g: -3 }] },
         steps: [
             { freq: "60-80 Hz", action: "High Pass", type: "cut", reason: "Limpa a região do sub-grave para o baixo brilhar." },
             { freq: "500 Hz", action: "Corte", type: "cut", reason: "Remove a 'lama' que tira a definição das cordas graves." },
@@ -132,7 +132,7 @@ const EQ_RECIPES = [
         name: "Lead Fuzz (Classic/Stoner)",
         type: "Guitarra • Lead",
         desc: "Faz o Fuzz cortar a mix sem soar 'abelhudo' ou magro.",
-        curve: { hp: 150, lp: 8000, boosts: [{f: 900, g: 4}], cuts: [{f: 4000, g: -3}] },
+        curve: { hp: 150, lp: 8000, boosts: [{ f: 900, g: 4 }], cuts: [{ f: 4000, g: -3 }] },
         steps: [
             { freq: "900 Hz", action: "Boost Médio", type: "boost", reason: "Compensa o 'scoop' natural de pedais Big Muff." },
             { freq: "4 kHz", action: "Corte Suave", type: "cut", reason: "Doma a estridência desagradável do fuzz." },
@@ -207,11 +207,11 @@ const VisualEQCurve: React.FC<{ curve: { hp: number, lp: number, boosts: any[], 
             const centerLog = Math.log(filter.f);
             const freqLog = Math.log(hz);
             const diff = Math.abs(freqLog - centerLog);
-            
+
             // Largura de banda visual (fator Q fixo para estética)
             // 0.35 é um valor que aproxima bem um Q musical padrão (aprox 1.4)
-            const bandwidth = 0.35; 
-            
+            const bandwidth = 0.35;
+
             // Gaussiana: Gain * e^(-(x-c)^2 / (2*w^2))
             if (diff < 2.5) { // Otimização: ignora se estiver muito longe
                 db += filter.g * Math.exp(-(Math.pow(diff, 2) / (2 * Math.pow(bandwidth, 2))));
@@ -223,7 +223,7 @@ const VisualEQCurve: React.FC<{ curve: { hp: number, lp: number, boosts: any[], 
             // Aproximação de 12dB/oitava
             const octaves = Math.log2(curve.hp / hz);
             // Suavização do joelho (knee)
-            db -= octaves * 12; 
+            db -= octaves * 12;
         }
 
         // Low Pass Filter
@@ -247,7 +247,7 @@ const VisualEQCurve: React.FC<{ curve: { hp: number, lp: number, boosts: any[], 
         // Mapeia dB para Y. Centro (0dB) = height / 2
         // Se db = 18, y = padding. Se db = -18, y = height - padding
         let y = (height / 2) - (db / rangeDB) * ((height - (padding * 2)) / 2);
-        
+
         // Clamp para não sair do SVG
         y = Math.max(5, Math.min(height - 5, y));
 
@@ -269,23 +269,23 @@ const VisualEQCurve: React.FC<{ curve: { hp: number, lp: number, boosts: any[], 
                 {/* Grid Vertical (Frequências) */}
                 {gridFreqs.map(f => {
                     const x = mapFreqToX(f);
-                    const label = f >= 1000 ? `${f/1000}k` : f;
+                    const label = f >= 1000 ? `${f / 1000}k` : f;
                     return (
                         <g key={f}>
                             <line x1={x} y1={padding} x2={x} y2={height - padding} stroke="#2a2a2a" strokeWidth="1" strokeDasharray="2" />
-                            <text x={x} y={height - 6} fill="#555" fontSize="9" textAnchor="middle" fontFamily="monospace" style={{pointerEvents: 'none'}}>{label}</text>
+                            <text x={x} y={height - 6} fill="#555" fontSize="9" textAnchor="middle" fontFamily="monospace" style={{ pointerEvents: 'none' }}>{label}</text>
                         </g>
                     );
                 })}
-                
+
                 {/* Linha Zero dB */}
-                <line x1={padding} y1={height/2} x2={width - padding} y2={height/2} stroke="#333" strokeWidth="1" />
+                <line x1={padding} y1={height / 2} x2={width - padding} y2={height / 2} stroke="#333" strokeWidth="1" />
 
                 {/* Área Preenchida (FabFilter Style) */}
                 <path d={areaPath} fill="url(#grad)" opacity="0.2" />
-                
+
                 {/* Linha da Curva */}
-                <path d={linePath} stroke="#f59b0a" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{filter: 'drop-shadow(0 0 6px rgba(245,155,10,0.4))'}} />
+                <path d={linePath} stroke="#f59b0a" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 6px rgba(245,155,10,0.4))' }} />
 
                 {/* Definição do Gradiente */}
                 <defs>
@@ -328,11 +328,11 @@ const NavigationSidebar: React.FC = () => {
                     <span className={`material-symbols-outlined ${isActive('/ear-trainer') ? 'text-primary fill' : 'group-hover:text-primary transition-colors'}`}>hearing</span>
                     <span className={`font-medium ${isActive('/ear-trainer') ? 'text-white' : ''}`}>Treino de Ouvido</span>
                 </Link>
-                 <Link to="/chapter-quiz" className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive('/chapter-quiz') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                <Link to="/chapter-quiz" className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive('/chapter-quiz') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
                     <span className={`material-symbols-outlined ${isActive('/chapter-quiz') ? 'text-primary fill' : 'group-hover:text-primary transition-colors'}`}>school</span>
                     <span className={`font-medium ${isActive('/chapter-quiz') ? 'text-white' : ''}`}>Quiz (50 Questões)</span>
                 </Link>
-                 <Link to="/eq-recipes" className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive('/eq-recipes') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
+                <Link to="/eq-recipes" className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all group ${isActive('/eq-recipes') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
                     <span className={`material-symbols-outlined ${isActive('/eq-recipes') ? 'text-primary fill' : 'group-hover:text-primary transition-colors'}`}>tune</span>
                     <span className={`font-medium ${isActive('/eq-recipes') ? 'text-white' : ''}`}>Receitas Prontas</span>
                 </Link>
@@ -344,7 +344,7 @@ const NavigationSidebar: React.FC = () => {
 const MobileHeader: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
-    
+
     // Close menu when route changes
     useEffect(() => {
         setIsMenuOpen(false);
@@ -366,12 +366,12 @@ const MobileHeader: React.FC = () => {
         <>
             <header className="md:hidden sticky top-0 z-40 flex items-center justify-between px-6 py-4 bg-background-dark/90 backdrop-blur-md border-b border-surface-highlight">
                 <div className="flex items-center gap-3">
-                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600 shadow-lg shadow-primary/20">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600 shadow-lg shadow-primary/20">
                         <span className="material-symbols-outlined text-white text-lg">graphic_eq</span>
                     </div>
                     <span className="font-bold text-white text-sm">Domínio do Timbre</span>
                 </div>
-                <button 
+                <button
                     onClick={() => setIsMenuOpen(true)}
                     className="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-highlight text-white active:scale-95 transition-transform"
                 >
@@ -383,28 +383,28 @@ const MobileHeader: React.FC = () => {
             {isMenuOpen && (
                 <div className="fixed inset-0 z-50 flex flex-col bg-background-dark animate-in slide-in-from-right duration-300">
                     <div className="flex items-center justify-between px-6 py-4 border-b border-surface-highlight">
-                         <div className="flex items-center gap-3">
-                             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600">
+                        <div className="flex items-center gap-3">
+                            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-primary to-orange-600">
                                 <span className="material-symbols-outlined text-white text-lg">graphic_eq</span>
                             </div>
                             <span className="font-bold text-white text-sm">Menu</span>
                         </div>
-                        <button 
+                        <button
                             onClick={() => setIsMenuOpen(false)}
                             className="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-highlight text-white active:scale-95 transition-transform"
                         >
                             <span className="material-symbols-outlined">close</span>
                         </button>
                     </div>
-                    
+
                     <nav className="flex-1 overflow-y-auto p-4 flex flex-col gap-2">
                         <Link to="/" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
                             <span className={`material-symbols-outlined ${isActive('/') ? 'text-primary' : ''}`}>dashboard</span>
                             <span className={`font-medium ${isActive('/') ? 'text-white' : ''} text-lg`}>Dashboard</span>
                         </Link>
-                        
+
                         <div className="px-4 py-4 mt-2 text-xs font-bold text-text-muted uppercase tracking-wider">Ferramentas</div>
-                        
+
                         <Link to="/frequency-lab" className={`flex items-center gap-4 px-4 py-4 rounded-xl transition-all ${isActive('/frequency-lab') ? 'bg-surface-highlight border-l-4 border-primary' : 'hover:bg-surface-highlight/50 text-text-muted hover:text-white'}`}>
                             <span className={`material-symbols-outlined ${isActive('/frequency-lab') ? 'text-primary' : ''}`}>ssid_chart</span>
                             <div className="flex flex-col">
@@ -464,19 +464,43 @@ const DashboardScreen: React.FC = () => {
                         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
                         <div className="relative z-10 max-w-2xl flex flex-col gap-4">
                             <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
-                                Domine as Frequências. <br/>
+                                Domine as Frequências. <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Esculpe seu Som.</span>
                             </h1>
                             <p className="text-text-muted text-lg font-light leading-relaxed max-w-lg">
                                 Identifique os problemas do seu timbre e aplique as correções.
                             </p>
-                            <div className="pt-4 flex gap-4">
-                                <Link to="/frequency-lab" className="bg-primary hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-lg shadow-primary/25 flex items-center gap-2">
-                                    <span className="material-symbols-outlined">play_arrow</span>
-                                    Mapa do Tesouro
+                            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                                <Link to="/frequency-lab" className="bg-primary hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-lg shadow-primary/25 flex items-center justify-between group">
+                                    <div className="flex flex-col items-start">
+                                        <span className="text-lg">Mapa do Tesouro</span>
+                                        <span className="text-xs font-normal opacity-80">Explore as frequências</span>
+                                    </div>
+                                    <span className="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">ssid_chart</span>
                                 </Link>
-                                <Link to="/eq-recipes" className="bg-surface-highlight hover:bg-surface-highlight/80 text-white font-medium py-3 px-6 rounded-lg transition-colors border border-surface-highlight hover:border-text-muted/30">
-                                    Receitas de EQ
+
+                                <Link to="/ear-trainer" className="bg-surface-highlight hover:bg-surface-highlight/80 text-white font-bold py-4 px-6 rounded-xl transition-colors border border-surface-highlight hover:border-text-muted/30 flex items-center justify-between group">
+                                    <div className="flex flex-col items-start">
+                                        <span className="text-lg">Treino de Ouvido</span>
+                                        <span className="text-xs font-normal opacity-80 text-text-muted">Teste sua percepção</span>
+                                    </div>
+                                    <span className="material-symbols-outlined text-3xl text-primary group-hover:scale-110 transition-transform">hearing</span>
+                                </Link>
+
+                                <Link to="/chapter-quiz" className="bg-surface-highlight hover:bg-surface-highlight/80 text-white font-bold py-4 px-6 rounded-xl transition-colors border border-surface-highlight hover:border-text-muted/30 flex items-center justify-between group">
+                                    <div className="flex flex-col items-start">
+                                        <span className="text-lg">Quiz (50 Questões)</span>
+                                        <span className="text-xs font-normal opacity-80 text-text-muted">Desafie seu conhecimento</span>
+                                    </div>
+                                    <span className="material-symbols-outlined text-3xl text-primary group-hover:scale-110 transition-transform">school</span>
+                                </Link>
+
+                                <Link to="/eq-recipes" className="bg-surface-highlight hover:bg-surface-highlight/80 text-white font-bold py-4 px-6 rounded-xl transition-colors border border-surface-highlight hover:border-text-muted/30 flex items-center justify-between group">
+                                    <div className="flex flex-col items-start">
+                                        <span className="text-lg">Receitas Prontas</span>
+                                        <span className="text-xs font-normal opacity-80 text-text-muted">Presets de EQ</span>
+                                    </div>
+                                    <span className="material-symbols-outlined text-3xl text-primary group-hover:scale-110 transition-transform">tune</span>
                                 </Link>
                             </div>
                         </div>
@@ -493,7 +517,7 @@ const FrequencyLabScreen: React.FC = () => {
     const oscillatorRef = useRef<OscillatorNode | null>(null);
 
     const currentTip = useMemo(() => getFrequencyTip(frequency), [frequency]);
-    
+
     useEffect(() => {
         if (isPlaying) {
             const ctx = getAudioCtx();
@@ -517,14 +541,14 @@ const FrequencyLabScreen: React.FC = () => {
             }
         } else {
             if (oscillatorRef.current) {
-                try { oscillatorRef.current.stop(); } catch(e){}
+                try { oscillatorRef.current.stop(); } catch (e) { }
                 oscillatorRef.current.disconnect();
                 oscillatorRef.current = null;
             }
         }
         return () => {
             if (oscillatorRef.current) {
-                try { oscillatorRef.current.stop(); } catch(e){}
+                try { oscillatorRef.current.stop(); } catch (e) { }
                 oscillatorRef.current.disconnect();
                 oscillatorRef.current = null;
             }
@@ -533,7 +557,7 @@ const FrequencyLabScreen: React.FC = () => {
 
     return (
         <div className="relative flex flex-col w-full h-full overflow-y-auto bg-background-light dark:bg-background-dark">
-             <MobileHeader />
+            <MobileHeader />
             <header className="hidden md:flex sticky top-0 z-50 items-center justify-between border-b border-gray-200 dark:border-[#393228] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 md:px-10">
                 <div className="flex items-center gap-3 text-slate-900 dark:text-white">
                     <div className="flex size-8 items-center justify-center rounded-lg bg-primary/20 text-primary">
@@ -564,14 +588,14 @@ const FrequencyLabScreen: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="w-full rounded-xl bg-white dark:bg-surface-dark border border-gray-200 dark:border-[#393228] p-6 shadow-md flex flex-col gap-6">
                         <div className="flex flex-col md:flex-row items-center gap-6">
                             <button onClick={() => setFrequency(prev => Math.max(20, prev - 10))} className="hidden md:flex items-center justify-center h-12 w-16 rounded-lg bg-surface-highlight hover:bg-surface-highlight/80 text-white transition-colors">
                                 <span className="material-symbols-outlined text-sm">remove</span>
                             </button>
                             <div className="flex-1 w-full relative group">
-                                <input className="w-full cursor-pointer" type="range" min="20" max="20000" step="10" value={frequency} onChange={(e) => setFrequency(parseInt(e.target.value))}/>
+                                <input className="w-full cursor-pointer" type="range" min="20" max="20000" step="10" value={frequency} onChange={(e) => setFrequency(parseInt(e.target.value))} />
                             </div>
                             <button onClick={() => setFrequency(prev => Math.min(20000, prev + 10))} className="hidden md:flex items-center justify-center h-12 w-16 rounded-lg bg-surface-highlight hover:bg-surface-highlight/80 text-white transition-colors">
                                 <span className="material-symbols-outlined text-sm">add</span>
@@ -590,7 +614,7 @@ const EarTrainerScreen: React.FC = () => {
     const [round, setRound] = useState(1);
     const [score, setScore] = useState(0);
     const [maxRounds] = useState(20);
-    
+
     // Logic State
     const [target, setTarget] = useState<typeof TRAINER_DATA[0] | null>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -648,7 +672,7 @@ const EarTrainerScreen: React.FC = () => {
 
         osc.type = 'sine';
         osc.frequency.setValueAtTime(freq, ctx.currentTime);
-        
+
         // Attack envelope to avoid popping
         gain.gain.setValueAtTime(0, ctx.currentTime);
         gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.1);
@@ -673,7 +697,7 @@ const EarTrainerScreen: React.FC = () => {
                     gainRef.current.gain.setValueAtTime(gainRef.current.gain.value, currTime);
                     gainRef.current.gain.linearRampToValueAtTime(0, currTime + 0.1);
                     oscRef.current.stop(currTime + 0.1);
-                } catch(e) {}
+                } catch (e) { }
             }
         }
         oscRef.current = null;
@@ -691,7 +715,7 @@ const EarTrainerScreen: React.FC = () => {
 
     const checkAnswer = (selected: typeof TRAINER_DATA[0]) => {
         if (answered || !target) return;
-        
+
         stopTone();
         setAnswered(true);
 
@@ -726,17 +750,17 @@ const EarTrainerScreen: React.FC = () => {
         <div className="flex flex-col w-full h-full overflow-y-auto bg-background-light dark:bg-background-dark">
             <MobileHeader />
             <main className="flex-1 max-w-2xl w-full mx-auto p-4 md:p-8 flex flex-col items-center justify-center min-h-[500px]">
-                
+
                 {/* --- INTRO SCREEN --- */}
                 {gameState === 'INTRO' && (
                     <div className="text-center animate-in fade-in zoom-in duration-300">
-                         <div className="mb-6 inline-flex p-6 rounded-full bg-surface-highlight border-2 border-primary/20 shadow-xl">
+                        <div className="mb-6 inline-flex p-6 rounded-full bg-surface-highlight border-2 border-primary/20 shadow-xl">
                             <span className="material-symbols-outlined text-6xl text-primary">headphones</span>
                         </div>
                         <h2 className="text-3xl font-black text-white mb-4">Treine seu Ouvido</h2>
                         <p className="text-text-muted mb-8 leading-relaxed max-w-md mx-auto">
-                            O sistema tocará um tom senoidal puro.<br/>
-                            Você responderá a <strong className="text-white">20 perguntas</strong>.<br/>
+                            O sistema tocará um tom senoidal puro.<br />
+                            Você responderá a <strong className="text-white">20 perguntas</strong>.<br />
                             Ao final, receberá uma nota de 0 a 10.
                         </p>
                         <button onClick={startGame} className="px-8 py-4 bg-primary text-black font-bold text-lg rounded-xl hover:bg-primary-hover transition-transform hover:scale-105 shadow-lg shadow-primary/25">
@@ -758,17 +782,17 @@ const EarTrainerScreen: React.FC = () => {
 
                         {/* Audio Control & Feedback */}
                         <div className="text-center mb-8">
-                             <div className={`text-xl font-bold mb-4 min-h-[2rem] transition-colors ${answered ? (lastResult === 'correct' ? 'text-success' : 'text-error') : 'text-text-muted'}`}>
+                            <div className={`text-xl font-bold mb-4 min-h-[2rem] transition-colors ${answered ? (lastResult === 'correct' ? 'text-success' : 'text-error') : 'text-text-muted'}`}>
                                 {answered ? (
-                                    lastResult === 'correct' 
-                                    ? `✅ Correto! ${target.hz}Hz - ${target.label}` 
-                                    : `❌ Era ${target.hz}Hz - ${target.label}`
+                                    lastResult === 'correct'
+                                        ? `✅ Correto! ${target.hz}Hz - ${target.label}`
+                                        : `❌ Era ${target.hz}Hz - ${target.label}`
                                 ) : (
                                     "Ouvindo... ??? Hz"
                                 )}
                             </div>
 
-                            <button 
+                            <button
                                 onClick={toggleTone}
                                 className={`inline-flex items-center gap-2 px-6 py-3 rounded-full border font-bold transition-all ${isPlaying ? 'bg-primary border-primary text-black animate-pulse shadow-[0_0_15px_rgba(245,155,10,0.4)]' : 'bg-surface-highlight border-white/10 text-white hover:bg-surface-highlight/80'}`}
                             >
@@ -782,7 +806,7 @@ const EarTrainerScreen: React.FC = () => {
                             {TRAINER_DATA.map((opt) => {
                                 // Logic to determine button style based on answer state
                                 let btnClass = "flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all relative overflow-hidden ";
-                                
+
                                 if (!answered) {
                                     // Default State
                                     btnClass += "bg-surface-highlight border-transparent hover:bg-surface-highlight/80 hover:border-white/20 text-white cursor-pointer";
@@ -800,7 +824,7 @@ const EarTrainerScreen: React.FC = () => {
                                 }
 
                                 return (
-                                    <button 
+                                    <button
                                         key={opt.hz}
                                         onClick={() => checkAnswer(opt)}
                                         disabled={answered}
@@ -829,7 +853,7 @@ const EarTrainerScreen: React.FC = () => {
                     <div className="text-center animate-in zoom-in duration-300 max-w-sm w-full">
                         <div className="text-6xl mb-4">📊</div>
                         <h2 className="text-2xl font-bold text-white mb-6">Resultado Final</h2>
-                        
+
                         <div className="bg-surface-highlight border border-white/5 rounded-2xl p-8 mb-8 shadow-xl">
                             <div className="text-xs font-bold text-text-muted uppercase tracking-widest mb-2">Sua Nota</div>
                             <div className={`text-7xl font-black mb-2 ${gradeColor}`}>
@@ -841,7 +865,7 @@ const EarTrainerScreen: React.FC = () => {
                         </div>
 
                         <p className="text-text-muted mb-8 text-lg">{finalMsg}</p>
-                        
+
                         <button onClick={restartGame} className="w-full py-4 bg-primary text-black font-bold rounded-xl hover:bg-primary-hover transition-transform hover:scale-[1.02]">
                             TENTAR NOVAMENTE
                         </button>
@@ -911,8 +935,8 @@ const ChapterQuizScreen: React.FC = () => {
                             }
 
                             return (
-                                <button 
-                                    key={idx} 
+                                <button
+                                    key={idx}
                                     onClick={() => handleOptionSelect(idx)}
                                     disabled={selectedOption !== null}
                                     className={itemClass}
@@ -963,7 +987,7 @@ const EQRecipesScreen: React.FC = () => {
                                 </div>
                                 <p className="text-slate-600 dark:text-gray-400 text-sm">{recipe.desc}</p>
                             </div>
-                            
+
                             <div className="p-6 bg-black/20">
                                 <VisualEQCurve curve={recipe.curve} />
                             </div>
